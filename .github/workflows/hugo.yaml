@@ -41,7 +41,7 @@ jobs:
 
       - name: Configure Pages
         id: pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Build site
         run: hugo --source static --destination public --cleanDestinationDir --minify --panicOnWarning
