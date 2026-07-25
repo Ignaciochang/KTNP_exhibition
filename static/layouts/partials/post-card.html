@@ -1,7 +1,7 @@
 <article class="post-card">
   <a class="card-image" href="{{ .RelPermalink }}" tabindex="-1">
     {{ with .Resources.GetMatch "images/*" }}
-      {{ $thumb := .Fill "720x500 webp q78 Center" }}
+      {{ $thumb := .Fit "720x720 webp q78" }}
       <img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="" loading="lazy">
     {{ else }}
       <span class="image-placeholder">IB</span>
@@ -14,4 +14,3 @@
     <a class="read-more" href="{{ .RelPermalink }}">閱讀文章 <span>→</span></a>
   </div>
 </article>
-
