@@ -200,11 +200,7 @@ img { max-width: 100%; height: auto; }
 .comments-note { max-width: 680px; margin: .8rem 0 1.5rem; color: var(--muted); font-size: .85rem; }
 #remark42 {
   margin-top: 2rem;
-  padding: 1.5rem;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #fff;
-  color: #1f2933;
+  color: var(--ink);
 }
 
 .pagination { display: flex; justify-content: center; gap: .4rem; margin: 4rem 0 0; padding: 0; list-style: none; }
