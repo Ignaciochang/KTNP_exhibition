@@ -11,7 +11,6 @@
   <div class="article-layout">
     <aside class="article-meta">
       <span>發布日期</span><strong>{{ .Date.Format "2006 年 01 月 02 日" }}</strong>
-      {{ with .Params.original_url }}<a href="{{ . }}" rel="external">痞客邦原文 ↗</a>{{ end }}
     </aside>
     <div class="prose">{{ .Content }}</div>
   </div>
