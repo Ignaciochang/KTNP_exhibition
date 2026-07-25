@@ -198,9 +198,14 @@ img { max-width: 100%; height: auto; }
 .comments { max-width: 1020px; margin-top: 5rem; padding-top: 3rem; border-top: 1px solid var(--line); }
 .comments h2 { margin: 0; font: 700 clamp(1.8rem, 4vw, 2.8rem) var(--serif); }
 .comments-note { max-width: 680px; margin: .8rem 0 1.5rem; color: var(--muted); font-size: .85rem; }
-.comments-load { border: 0; cursor: pointer; font: 700 .9rem var(--sans); }
-.comments-load:disabled { opacity: .7; cursor: wait; }
-#disqus_thread { margin-top: 2rem; }
+#remark42 {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: #1f2933;
+}
 
 .pagination { display: flex; justify-content: center; gap: .4rem; margin: 4rem 0 0; padding: 0; list-style: none; }
 .page-link { display: grid; place-items: center; min-width: 40px; height: 40px; padding: 0 .6rem; border: 1px solid var(--line); text-decoration: none; }
