@@ -23,7 +23,7 @@ params:
   description: "鳥類標本、窗殺紀錄與圖文創作"
   author: "Ignacio Bird Taxidermy"
   sourceLabel: "原始文章刊載於痞客邦"
-  disqusShortname: ""
+  disqusShortname: "ignacio-chang"
 
 markup:
   goldmark:
