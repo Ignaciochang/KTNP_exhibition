@@ -1,0 +1,25 @@
+{{ define "main" }}
+<article class="article-shell">
+  <header class="article-header">
+    <p class="eyebrow">FIELD NOTE · {{ .Date.Format "2006.01.02" }}</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="article-deck">{{ . }}</p>{{ end }}
+  </header>
+  {{ with .Resources.GetMatch "images/*" }}
+    {{ $hero := .Fit "1400x900 webp q82" }}
+    <figure class="article-hero"><img src="{{ $hero.RelPermalink }}" width="{{ $hero.Width }}" height="{{ $hero.Height }}" alt="" fetchpriority="high"></figure>
+  {{ end }}
+  <div class="article-layout">
+    <aside class="article-meta">
+      <span>發布日期</span><strong>{{ .Date.Format "2006 年 01 月 02 日" }}</strong>
+      {{ with .Params.original_url }}<a href="{{ . }}" rel="external">痞客邦原文 ↗</a>{{ end }}
+    </aside>
+    <div class="prose">{{ .Content }}</div>
+  </div>
+  <nav class="post-nav" aria-label="文章導覽">
+    {{ with .PrevInSection }}<a href="{{ .RelPermalink }}"><small>較舊文章</small><span>← {{ .Title }}</span></a>{{ end }}
+    {{ with .NextInSection }}<a href="{{ .RelPermalink }}"><small>較新文章</small><span>{{ .Title }} →</span></a>{{ end }}
+  </nav>
+  {{ partial "comments.html" . }}
+</article>
+{{ end }}

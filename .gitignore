@@ -1,0 +1,10 @@
+/pixnet_backup/
+/venv/
+/tools/
+/archive_pixnet.py
+/requirements.txt
+/static/public/
+/static/resources/
+/static/.hugo_build.lock
+__pycache__/
+*.pyc

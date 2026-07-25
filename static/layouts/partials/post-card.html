@@ -1,0 +1,17 @@
+<article class="post-card">
+  <a class="card-image" href="{{ .RelPermalink }}" tabindex="-1">
+    {{ with .Resources.GetMatch "images/*" }}
+      {{ $thumb := .Fill "720x500 webp q78 Center" }}
+      <img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="" loading="lazy">
+    {{ else }}
+      <span class="image-placeholder">IB</span>
+    {{ end }}
+  </a>
+  <div class="card-body">
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    <p>{{ .Description | default .Summary | plainify | truncate 76 }}</p>
+    <a class="read-more" href="{{ .RelPermalink }}">閱讀文章 <span>→</span></a>
+  </div>
+</article>
+

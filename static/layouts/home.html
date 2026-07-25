@@ -1,0 +1,27 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="shell hero-inner">
+    <p class="eyebrow">BIRDS · MEMORY · CRAFT</p>
+    <h1>讓羽毛留下<br>生命走過的痕跡</h1>
+    <p class="hero-copy">鳥類標本、窗殺紀錄，以及在製作台上遇見的每一段故事。</p>
+    <a class="button" href="{{ "posts/" | relURL }}">瀏覽全部文章 <span>→</span></a>
+  </div>
+</section>
+<section class="shell section">
+  <div class="section-heading">
+    <div><p class="eyebrow">RECENT STORIES</p><h2>近期文章</h2></div>
+    <a href="{{ "posts/" | relURL }}">查看全部 {{ len (where site.RegularPages "Section" "posts") }} 篇</a>
+  </div>
+  <div class="card-grid">
+    {{ range first 6 (where site.RegularPages.ByDate.Reverse "Section" "posts") }}
+      {{ partial "post-card.html" . }}
+    {{ end }}
+  </div>
+</section>
+<section class="manifesto">
+  <div class="shell manifesto-inner">
+    <p>「標本不是死亡的展示，<br>而是讓觀察得以繼續。」</p>
+    <a href="{{ "about/" | relURL }}">了解這個存檔計畫 →</a>
+  </div>
+</section>
+{{ end }}

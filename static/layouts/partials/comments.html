@@ -1,0 +1,16 @@
+{{ with site.Params.disqusShortname }}
+<section class="comments shell" aria-labelledby="comments-title">
+  <p class="eyebrow">DISCUSSION</p>
+  <h2 id="comments-title">文章留言</h2>
+  <p class="comments-note">留言由 Disqus 提供。點擊後才會連線到 Disqus，並受其隱私權與 Cookie 政策約束。</p>
+  <button class="button comments-load"
+          data-shortname="{{ . }}"
+          data-identifier="pixnet-{{ $.Params.pixnet_id }}"
+          data-url="{{ $.Permalink }}"
+          data-title="{{ $.Title }}">
+    載入留言 <span>→</span>
+  </button>
+  <div id="disqus_thread"></div>
+  <noscript>請啟用 JavaScript 以查看 Disqus 留言。</noscript>
+</section>
+{{ end }}
