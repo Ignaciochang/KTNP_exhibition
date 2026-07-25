@@ -23,7 +23,9 @@ params:
   description: "鳥類標本、窗殺紀錄與圖文創作"
   author: "Ignacio Bird Taxidermy"
   sourceLabel: "原始文章刊載於痞客邦"
-  disqusShortname: "ignacio-chang"
+  disqusShortname: ""
+  remark42Host: "https://104.64.128.79.sslip.io"
+  remark42SiteID: "kenting"
 
 markup:
   goldmark:

@@ -1,16 +1,25 @@
-{{ with site.Params.disqusShortname }}
+{{ $host := site.Params.remark42Host }}
+{{ $siteID := site.Params.remark42SiteID }}
+{{ if and $host $siteID }}
 <section class="comments shell" aria-labelledby="comments-title">
   <p class="eyebrow">DISCUSSION</p>
   <h2 id="comments-title">文章留言</h2>
-  <p class="comments-note">留言由 Disqus 提供。點擊後才會連線到 Disqus，並受其隱私權與 Cookie 政策約束。</p>
-  <button class="button comments-load"
-          data-shortname="{{ . }}"
-          data-identifier="pixnet-{{ $.Params.pixnet_id }}"
-          data-url="{{ $.Permalink }}"
-          data-title="{{ $.Title }}">
-    載入留言 <span>→</span>
-  </button>
-  <div id="disqus_thread"></div>
-  <noscript>請啟用 JavaScript 以查看 Disqus 留言。</noscript>
+  <p class="comments-note">留言由自架 Remark42 提供，可使用匿名名稱留言，不需要登入社群帳號。</p>
+  <div id="remark42">留言載入中…</div>
+  <script>
+    window.remark_config = {
+      host: {{ printf "%q" $host | safeJS }},
+      site_id: {{ printf "%q" $siteID | safeJS }},
+      url: {{ printf "%q" .Permalink | safeJS }},
+      page_title: {{ printf "%q" .Title | safeJS }},
+      locale: "zh-tw",
+      components: ["embed"],
+      show_email_subscription: false
+    };
+  </script>
+  <script>
+    !function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement("script"),c=".js",d=n.head||n.body;"noModule"in r?(r.type="module",c=".mjs"):r.async=!0,r.defer=!0,r.src=window.remark_config.host+"/web/"+e[o]+c,d.appendChild(r)}}(window.remark_config.components||["embed"],document);
+  </script>
+  <noscript>請啟用 JavaScript 以查看留言。</noscript>
 </section>
 {{ end }}

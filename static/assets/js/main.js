@@ -32,22 +32,6 @@
       : "<p class=\"search-empty\">找不到符合的文章</p>";
   });
 
-  document.querySelector(".comments-load")?.addEventListener("click", event => {
-    const button = event.currentTarget;
-    window.disqus_config = function () {
-      this.page.url = button.dataset.url;
-      this.page.identifier = button.dataset.identifier;
-      this.page.title = button.dataset.title;
-    };
-    const script = document.createElement("script");
-    script.src = `https://${button.dataset.shortname}.disqus.com/embed.js`;
-    script.dataset.timestamp = String(Date.now());
-    script.async = true;
-    document.head.appendChild(script);
-    button.disabled = true;
-    button.textContent = "留言載入中…";
-  }, { once: true });
-
   function escapeHtml(value) {
     const node = document.createElement("span");
     node.textContent = value;
