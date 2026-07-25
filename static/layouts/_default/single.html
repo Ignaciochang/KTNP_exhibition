@@ -3,7 +3,6 @@
   <header class="article-header">
     <p class="eyebrow">FIELD NOTE · {{ .Date.Format "2006.01.02" }}</p>
     <h1>{{ .Title }}</h1>
-    {{ with .Description }}<p class="article-deck">{{ . }}</p>{{ end }}
   </header>
   {{ with .Resources.GetMatch "images/*" }}
     {{ $hero := .Fit "1400x900 webp q82" }}
