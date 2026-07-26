@@ -18,9 +18,6 @@
     {{ with .PrevInSection }}<a href="{{ .RelPermalink }}"><small>較舊文章</small><span>← {{ .Title }}</span></a>{{ end }}
     {{ with .NextInSection }}<a href="{{ .RelPermalink }}"><small>較新文章</small><span>{{ .Title }} →</span></a>{{ end }}
   </nav>
-  {{ if eq .Section "posts" }}
-    <p class="shell article-warning">部分內容含鳥類死亡或標本製作影像，請斟酌閱讀。</p>
-  {{ end }}
   {{ partial "comments.html" . }}
 </article>
 {{ end }}

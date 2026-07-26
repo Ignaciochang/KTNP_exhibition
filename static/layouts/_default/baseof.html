@@ -34,6 +34,9 @@
     <div class="shell footer-grid">
       <div><strong>{{ site.Title }}</strong><p>{{ site.Params.description }}</p></div>
       <div><a href="{{ "index.xml" | relURL }}">RSS</a><a href="{{ "sitemap.xml" | relURL }}">網站地圖</a></div>
+      {{ if not .IsHome }}
+        <p class="fine-print">部分內容含鳥類死亡或標本製作影像，請斟酌閱讀。</p>
+      {{ end }}
     </div>
   </footer>
   <dialog id="search-dialog">
